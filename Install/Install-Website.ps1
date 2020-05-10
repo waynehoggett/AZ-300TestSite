@@ -9,7 +9,7 @@ $url = "https://github.com/waynehoggett/AZ-300TestSite/raw/master/Install/backup
 $zipfile = "C:\backup.zip"
 $folder = "C:\inetpub\wwwroot"
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-Invoke-WebRequest -uri $url -outfile $zipfile
+Invoke-WebRequest -uri $url -outfile $zipfile -UseBasicParsing
 
 #Extract and install website
 [System.IO.Compression.ZipFile]::ExtractToDirectory($zipfile, $folder)
